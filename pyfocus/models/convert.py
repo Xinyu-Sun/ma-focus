@@ -339,8 +339,12 @@ def import_predixcan(path, name, tissue, assay, method, session):
 
     log.info("Querying mygene servers for gene annotations")
     mg = mygene.MyGeneInfo()
+    
+    # Different from ma-focus
     results = mg.querymany(genes, scopes='ensembl.gene', verbose=False,
-                           fields="genomic_pos_hg19,symbol,alias", species="human")
+                           fields="genomic_pos,symbol,alias", species="human")
+    #results = mg.querymany(genes, scopes='ensembl.gene', verbose=False,
+    #                       fields="genomic_pos_hg19,symbol,alias", species="human")
 
     res_map = defaultdict(list)
     for result in results:
