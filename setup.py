@@ -20,7 +20,7 @@ st.setup(
         # functions that require addtl modules will warn/raise error
         # this is to minimize dependencies for the most-used scenario
         "opencv-python",
-        "sqlalchemy",
+        "sqlalchemy<2.0",
         "matplotlib>=3.1.0",
         "seaborn",
         "numpy",
