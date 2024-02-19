@@ -376,10 +376,13 @@ def import_predixcan(path, name, tissue, assay, method, session):
             if hit["symbol"] != g_name and "alias" in hit and g_name not in hit["alias"]:
                 continue
 
-            if "genomic_pos_hg19" not in hit:
+            if "genomic_pos" not in hit:
                 continue
+            #if "genomic_pos_hg19" not in hit:
+            #    continue
 
-            gpos = hit["genomic_pos_hg19"]
+            gpos = hit["genomic_pos"]
+            #gpos = hit["genomic_pos_hg19"]
             if type(gpos) is dict:
                 gpos = [gpos]
 
