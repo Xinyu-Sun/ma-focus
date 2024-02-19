@@ -359,7 +359,7 @@ def import_predixcan(path, name, tissue, assay, method, session):
         log.debug(f"Importing gene model {gid}")
         gene_extra = extra.loc[extra.gene == gid]
 
-        chrom = int(gene.varID.values[0].split(":")[0].replace("chr", ""))  # grab chromosome number as integer
+        chrom = gene.varID.values[0].split(":")[0].replace("chr", "")  # grab chromosome number as integer
         pos = gene.varID.map(lambda x: int(x.split(":")[1].split("_")[0])).values  # grab basepair pos as integer
         #chrom = gene.varID.values[0].split("_")[0]  # grab chromosome from varID
         #pos = gene.varID.map(lambda x: int(x.split("_")[1])).values  # grab basepair pos
