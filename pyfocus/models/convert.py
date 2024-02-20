@@ -373,6 +373,10 @@ def import_predixcan(path, name, tissue, assay, method, session):
             if "notfound" in hit:
                 continue
 
+            # Initialize "symbol" with an empty string if it's missing
+            if "symbol" not in hit:
+                hit["symbol"] = ""
+            
             if hit["symbol"] != g_name and "alias" in hit and g_name not in hit["alias"]:
                 continue
 
