@@ -672,6 +672,8 @@ def fine_map(gwas, wcollection, ref_geno, block, intercept=False, heterogeneity=
         sub_meta["twas_z"] = zscores_tmp
         wmat[i] = sub_wmat
         meta_data[i] = sub_meta
+        # Different from mafocus
+        log.debug(f"Number of NA in zscores: {sub_meta["twas_z"]}.")
 
     # calculate pips for single pop, and me.
     log.info(f"Calculating PIPs.")
